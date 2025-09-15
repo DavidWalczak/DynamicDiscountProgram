@@ -36,12 +36,12 @@ console.log(products)
 
 let customerDiscount= 0;
 /*
-for(each of); 
+for .... of; 
 apply customer discounts based on category of product by cycling through the array
 and checking category
 */
 for (element= 0; element < 4; element++) {
-    switch (category) {
+    switch (product[element][1]) {
         case ("grocery" || "household"): 
              customerDiscount= 10;
         break;
