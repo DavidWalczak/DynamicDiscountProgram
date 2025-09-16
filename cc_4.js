@@ -105,7 +105,13 @@ console.log("\nDetails of first product after discount");
 let exampleProduct = products[0];
 
 for (let key in exampleProduct) {
-    console.log(`${key}: ${exampleProduct[key]}`);
+    let value = exampleProduct[key];
+    
+    if (key.toLowerCase().includes("price")){
+        console.log(`${key}: $${(value.tofixed(2))}`);
+    } else {
+    console.log(`${key}: ${value}`);
+    }
 }
 
 //Step 7:
