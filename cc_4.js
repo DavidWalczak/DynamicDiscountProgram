@@ -33,7 +33,7 @@ let products= [
     }
 ];
 
-console.log("Initial Product List:");
+console.log("Roughly Outlined Initial Product List:");
 products.forEach(products => {
     console.log(products.name, " | ", products.category, " | ", products.price, " | ", products.inventory)
 });
