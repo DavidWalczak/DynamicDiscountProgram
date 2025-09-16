@@ -33,6 +33,7 @@ let products= [
     }
 ];
 
+console.log("Initial Product List:");
 products.forEach(products => {
     console.log(products.name, " | ", products.category, " | ", products.price, " | ", products.inventory)
 });
@@ -48,7 +49,8 @@ apply customer discounts based on category of product by cycling through the arr
 
 for (let product of products) {
     switch (product.category) {
-        case ("grocery" || "household"): 
+        case ("grocery"): 
+        case ("household"): 
             product.discountedPrice = product.price * .9;
             break;
         case "apparel":
@@ -119,7 +121,11 @@ for (let key in exampleProduct) {
 console.log("\nUpdated Product Inventory and Detilas:")
 for (let product of products) {
     for (let [key, value] of Object.entries(product)) {
+        if (key.toLowerCase().includes("price")){
+            console.log(`${key}: $${value.toFixed(2)}`);
+        } else {
         console.log(`${key}: ${value}`);
-    }
+        }
+    }  
     console.log("--------");
 }
