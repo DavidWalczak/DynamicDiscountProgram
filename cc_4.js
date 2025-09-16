@@ -47,7 +47,7 @@ apply customer discounts based on category of product by cycling through the arr
 
 
 for (let product of products) {
-    switch (products.category) {
+    switch (product.category) {
         case ("grocery" || "household"): 
             product.discountedPrice = product.price * .9;
             break;
@@ -62,12 +62,7 @@ for (let product of products) {
     }
 };
 
-products.forEach(products => {
-    console.log(products.name, " | ", products.disountedPrice)
-});
-
 /* This is the Step  4 code for customer type and additon of more discounts */
-let customerType= "senior";
 
 function applyCustomerDiscount(total,customerTpe){
     if (customerType== ("student")) {
@@ -79,20 +74,28 @@ function applyCustomerDiscount(total,customerTpe){
 }};
 
 /*
-for loop to simulate customers
+Step 5: A for loop to simulate customers, array of customers
 */
 
 let customerTypes=[
     "regular", "student", "senior"
 ];
 
-let customerCheckout= [
-    {
-        name: "Bob",
-        orderItemOne: "Bread",
-        orderItemOneQuantity: 2,
-        orderItemTwo: "Cybernetic Bread",
-        orderItemTwoQuantity: 1
-    }
-];
+for (let i=0; i<3; i++) {
+    let customerNum= i+1
+    let customerType= customerTypes[i]
 
+    let total = 0
+
+    for(let product of products) {
+        if (product.inventory > 0) {
+            total+= product.discountedPrice;
+            product.inventory -= 1;
+        }
+    }
+
+    let finalTotal = applyCustomerDiscount(total, customerType);
+
+    console.log(`Customer ${customerNum} (${customerType}) total: $${finalTotal.toFixed(2)}`);
+
+};
