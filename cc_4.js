@@ -64,28 +64,26 @@ for (let product of products) {
 
 /* This is the Step  4 code for customer type and additon of more discounts */
 
-function applyCustomerDiscount(total,customerTpe){
-    if (customerType== ("student")) {
+let customerType= "Existence Otherwise the Code Doesnt Run"
+
+function applyCustomerDiscount(total,customerType){
+    if (customerType === ("student")) {
         return total * .95;
-    } else if (customerType== "senior") {
+    } else if (customerType === "senior") {
         return total *.93;
     } else {
         return total;
 }};
 
-/*
-Step 5: A for loop to simulate customers, array of customers
-*/
+/* Step 5: A For loop to simulate customers, array of customers */
 
-let customerTypes=[
-    "regular", "student", "senior"
-];
+let customerTypes = ["regular", "student", "senior"];
 
 for (let i=0; i<3; i++) {
-    let customerNum= i+1
-    let customerType= customerTypes[i]
+    let customerNum= i+1;
+    let customerType= customerTypes[i];
 
-    let total = 0
+    let total = 0;
 
     for(let product of products) {
         if (product.inventory > 0) {
@@ -99,3 +97,23 @@ for (let i=0; i<3; i++) {
     console.log(`Customer ${customerNum} (${customerType}) total: $${finalTotal.toFixed(2)}`);
 
 };
+
+// Step 6: 
+
+console.log("\nDetails of first product after discount");
+
+let exampleProduct = products[0];
+
+for (let key in exampleProduct) {
+    console.log(`${key}: ${exampleProduct[key]}`);
+}
+
+//Step 7:
+
+console.log("\nUpdated Product Inventory and Detilas:")
+for (let product of products) {
+    for (let [key, value] of Object.entries(product)) {
+        console.log(`${key}: ${value}`);
+    }
+    console.log("--------");
+}
