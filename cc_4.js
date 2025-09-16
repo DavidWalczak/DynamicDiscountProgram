@@ -56,7 +56,7 @@ for (let product of products) {
         case "apparel":
             product.discountedPrice = product.price * .85;
             break;
-        case "electronics":
+        case "electronic":
             product.discountedPrice = product.price * .8;
             break;
         default:
@@ -110,7 +110,7 @@ for (let key in exampleProduct) {
     let value = exampleProduct[key];
     
     if (key.toLowerCase().includes("price")){
-        console.log(`${key}: $${(value.tofixed(2))}`);
+        console.log(`${key}: $${value.toFixed(2)}`);
     } else {
     console.log(`${key}: ${value}`);
     }
