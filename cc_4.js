@@ -66,7 +66,7 @@ for (let product of products) {
 
 /* This is the Step  4 code for customer type and additon of more discounts */
 
-let customerType= "Existence Otherwise the Code Doesnt Run"
+let customerType
 
 function applyCustomerDiscount(total,customerType){
     if (customerType === ("student")) {
@@ -118,7 +118,7 @@ for (let key in exampleProduct) {
 
 //Step 7:
 
-console.log("\nUpdated Product Inventory and Detilas:")
+console.log("\nUpdated Product Inventory and Details:")
 for (let product of products) {
     for (let [key, value] of Object.entries(product)) {
         if (key.toLowerCase().includes("price")){
